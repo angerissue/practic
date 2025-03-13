@@ -1,0 +1,23 @@
+$(document).ready(function() {
+    // Пример данных (в реальном проекте нужно получать с сервера)
+    const events = [
+        { name: "Конференция", date: "2023-12-15", location: "Актовый зал" },
+        { name: "Мастер-класс", date: "2023-12-20", location: "Кабинет 205" },
+        { name: "Выставка", date: "2023-12-25", location: "Фойе" }
+    ];
+
+    // Функция для добавления события в список
+    function addEvent(event) {
+        const eventItem = `
+            <div class="event-item">
+                <h3>${event.name}</h3>
+                <p>Дата: ${event.date}</p>
+                <p>Место: ${event.location}</p>
+            </div>
+        `;
+        $(".event-list").append(eventItem);
+    }
+
+    // Добавляем события в список
+    events.forEach(addEvent);
+});
